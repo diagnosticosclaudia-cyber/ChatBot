@@ -25,7 +25,7 @@ const geminiService = {
 
     preliminaryAnalysis: async (imagePath1, imagePath2, prompt = prompts.FULL_ANALYSIS) => {
         try {
-            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
             const imageParts1 = await fileToGenerativePart(imagePath1, "image/jpeg");
             const imageParts2 = await fileToGenerativePart(imagePath2, "image/jpeg");
             const parts = [imageParts1, imageParts2, { text: prompt }];
@@ -41,7 +41,7 @@ const geminiService = {
 
     fullAnalysis: async (imagePath1, imagePath2, prompt = prompts.FULL_ANALYSIS) => {
 try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const imageParts1 = await fileToGenerativePart(imagePath1, "image/jpeg");
     const imageParts2 = await fileToGenerativePart(imagePath2, "image/jpeg");
     const parts = [imageParts1, imageParts2, { text: prompt }];
