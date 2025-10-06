@@ -21,18 +21,6 @@ app.get('/', (req, res) => {
 Checkout README.md to start.</pre>`);
 });
 
-app._router.stack.forEach((r) => {
-  if (r.route && r.route.path) {
-    console.log(`📍 Ruta registrada: ${r.route.path}`);
-  } else if (r.name === 'router') {
-    r.handle.stack.forEach((handler) => {
-      const route = handler.route;
-      if (route) console.log(`📍 Ruta registrada: ${route.path}`);
-    });
-  }
-});
-
-
 app.listen(config.PORT, () => {
   console.log(`Server is listening on port:  ${config.PORT}`);
 });
